@@ -8,17 +8,39 @@ import streamlit_shadcn_ui as ui
 #Custom modules:
 import chart_functions as cf
 
-
 #Functions:
-
 def home():
     st.title("Supermarket Sales Data Analysis")
     st.write("This dashboard app features the full analysis of the supermarket sales data.")
     st.write("Navigate the app using the pages menu on the left.")
 
-def shadcn_button():
-    trigger_button = ui.button(text='This is a button')
-    return trigger_button
+def product_analysis():
+    st.title("Supermarket Sales Data Analysis: Product Analysis")
 
-home()
-button = shadcn_button()
+def gender_analysis():
+    st.title("Supermarket Sales Data Analysis: Gender Analysis")
+
+def member_analysis():
+    st.title("Supermarket Sales Data Analysis: Member Analysis")
+
+#Sidebar:
+with st.sidebar:
+    selected = option_menu(
+        menu_title="Menu",
+        options=["Home", "Product Analysis", "Gender Analysis", "Member Analysis"],
+        menu_icon="list",
+        default_index=0
+    )
+
+#Main:
+if selected == "Home":
+    home()
+
+if selected == "Product Analysis":
+    product_analysis()
+
+if selected == "Gender Analysis":
+    gender_analysis()
+
+if selected == "Member Analysis":
+    member_analysis()
