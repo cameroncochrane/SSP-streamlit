@@ -28,6 +28,7 @@ with st.sidebar:
     selected = option_menu(
         menu_title="Menu",
         options=["Home", "Product Analysis", "Gender Analysis", "Member Analysis"],
+        icons=["house"],
         menu_icon="list",
         default_index=0
     )
