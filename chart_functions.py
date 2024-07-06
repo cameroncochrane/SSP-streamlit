@@ -5,12 +5,12 @@ import matplotlib.pyplot as plt
 def plot_member_data(type):
 
     if type == 'sale_per_order':
-        average_sale_member = pd.read_csv('data/average_sale_member.csv')
-        average_sale_member.set_index(average_sale_member.columns[0], inplace=True)
+        dataframe = pd.read_csv('data/average_sale_member.csv')
+        dataframe.set_index(dataframe.columns[0], inplace=True)
 
-        categories = average_sale_member.columns
-        member_data = average_sale_member.loc['Member'].values
-        non_member_data = average_sale_member.loc['Non-member'].values
+        categories = dataframe.columns
+        member_data = dataframe.loc['Member'].values
+        non_member_data = dataframe.loc['Non-member'].values
 
         # Define the positions for the bars
         bar_width = 0.35
@@ -82,7 +82,7 @@ def plot_member_data(type):
         ax.set_ylim(150,180)
         ax.legend()
 
-    return fig
+    return fig, dataframe
 
 def plot_gender_data(type):
 
