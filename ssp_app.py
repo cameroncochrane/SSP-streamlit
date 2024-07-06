@@ -1,9 +1,11 @@
 #Base modules:
 import pandas as pd
 import numpy as np
+
 import streamlit as st
 from streamlit_option_menu import option_menu
 import streamlit_shadcn_ui as ui
+import streamlit.components.v1 as components
 
 #Custom modules:
 import chart_functions as cf
@@ -31,15 +33,20 @@ def member_analysis():
 def test_page():
     #st.title("Test Page")
     # Using HTML and CSS to style text
-    st.markdown("""
+    components.html("""
         <style>
         .big-font {
-            font-size:50px !important;
+            font-size:50px;
             color: red;
+        }
+        .custom-text {
+            font-size:20px;
+            color: blue;
         }
         </style>
         <p class="big-font">This is a title with custom font size and color!</p>
-        """, unsafe_allow_html=True)
+        <p class="custom-text">This is a write text with custom font size and color!</p>
+        """, height=200)
 
 #Sidebar:
 with st.sidebar:
