@@ -95,20 +95,22 @@ def member_analysis():
     st.title(":red[Member Analysis: Sales]")
     sales_graph, dataframe_sales = cf.plot_member_data(type='sales')
 
-    st.dataframe(dataframe_sales,use_container_width=True)
     st.pyplot(fig=sales_graph,use_container_width=True)
+    st.dataframe(dataframe_sales,use_container_width=True)
     
     #Orders:
     st.title(":red[Member Analysis: Orders]")
     orders_graph, dataframe_orders = cf.plot_member_data(type='orders')
 
     st.pyplot(fig=orders_graph,use_container_width=True)
+    st.dataframe(dataframe_orders,use_container_width=True)
     
     #Sale per Order:
     st.title(":red[Member Analysis: Average Sale per Order]")
     aso_graph, dataframe_aso = cf.plot_member_data(type='sale_per_order')
 
     st.pyplot(fig=aso_graph,use_container_width=True)
+    st.dataframe(dataframe_aso,use_container_width=True)
     
 
 
