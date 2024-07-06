@@ -16,6 +16,8 @@ def home():
 
 def product_analysis():
     st.title("Supermarket Sales Data Analysis: Product Analysis")
+    sales_graph = cf.plot_product_data(type='sales')
+    st.pyplot(fig=sales_graph,use_container_width=True)
 
 def gender_analysis():
     st.title("Supermarket Sales Data Analysis: Gender Analysis")
