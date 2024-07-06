@@ -31,14 +31,12 @@ def store_analysis():
     orders_graph, dataframe_orders = cf.plot_store_data(type='orders')
 
     st.pyplot(fig=orders_graph,use_container_width=True)
-    st.dataframe(dataframe_orders,use_container_width=True)
 
     #Sale per Order:
     st.title(":red[Average Sale Per Order]")
     aso_graph, dataframe_aso = cf.plot_store_data(type='sale_per_order')
 
     st.pyplot(fig=aso_graph,use_container_width=True)
-    st.dataframe(dataframe_aso,use_container_width=True)
 
 def product_analysis():
     st.title("Supermarket Sales Data Analysis: Product Analysis")
