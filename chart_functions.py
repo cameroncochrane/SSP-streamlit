@@ -309,5 +309,3 @@ def plot_product_data(type):
     return fig, dataframe
 
 
-
-
