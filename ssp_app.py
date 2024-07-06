@@ -17,8 +17,8 @@ def home():
 def product_analysis():
     st.title("Supermarket Sales Data Analysis: Product Analysis")
 
-    sales_graph,dataframe = cf.plot_product_data(type='sales')
-    
+    sales_graph, dataframe = cf.plot_product_data(type='sales')
+
     st.pyplot(fig=sales_graph,use_container_width=True)
     st.dataframe(dataframe,use_container_width=True)
 

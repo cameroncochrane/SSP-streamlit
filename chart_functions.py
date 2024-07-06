@@ -199,13 +199,13 @@ def plot_product_data(type):
         ax.legend()
     
     if type == 'sales':
-        sales_product = pd.read_csv('data/sales_product.csv')
-        sales_product.set_index(sales_product.columns[0], inplace=True)
+        dataframe = pd.read_csv('data/sales_product.csv')
+        dataframe.set_index(dataframe.columns[0], inplace=True)
 
-        categories = sales_product.index
-        mandalay_data = sales_product['Mandalay'].values
-        naypyitaw_data = sales_product['Naypyitaw'].values
-        yangon_data = sales_product['Yangon'].values
+        categories = dataframe.index
+        mandalay_data = dataframe['Mandalay'].values
+        naypyitaw_data = dataframe['Naypyitaw'].values
+        yangon_data = dataframe['Yangon'].values
 
 
         # Define the positions for the bars
@@ -258,7 +258,7 @@ def plot_product_data(type):
         ax.set_ylim(40,70)
         ax.legend()
 
-    return fig
+    return fig, dataframe
 
 
 
