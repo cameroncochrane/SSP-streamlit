@@ -2,6 +2,54 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+def plot_store_data(type):
+    if type == 'sale_per_order':
+        dataframe = pd.read_csv('data/store.csv')
+        dataframe.set_index(dataframe.columns[0], inplace=True)
+        
+        stores = dataframe.columns
+        sale_per_order_data = dataframe.loc['Average Sale per Order ($)'].values
+
+        fig, ax = plt.subplots()
+        ax.bar(stores, sale_per_order_data, color=['red', 'green','blue'])
+
+        ax.set_ylabel('Sale Amount($)')
+        ax.set_title('Average Sale per Order')
+        ax.set_xticklabels(stores)
+        ax.set_ylim(295,340)
+
+    if type == 'sales':
+        dataframe = pd.read_csv('data/store.csv')
+        dataframe.set_index(dataframe.columns[0], inplace=True)
+        
+        stores = dataframe.columns
+        sales_data = dataframe.loc['Sales ($)'].values
+
+        fig, ax = plt.subplots()
+        ax.bar(stores, sales_data, color=['red', 'green','blue'])
+
+        ax.set_ylabel('Sales($)')
+        ax.set_title('Total Sales')
+        ax.set_xticklabels(stores)
+        ax.set_ylim(100000,112000)
+
+    if type == 'orders':
+        dataframe = pd.read_csv('data/average_sale_member.csv')
+        dataframe.set_index(dataframe.columns[0], inplace=True)
+
+        stores = dataframe.columns
+        orders_data = dataframe.loc['Orders'].values
+
+        fig, ax = plt.subplots()
+        ax.bar(stores, orders_data, color=['red', 'green','blue'])
+
+        ax.set_ylabel('Orders')
+        ax.set_title('Total Orders')
+        ax.set_xticklabels(stores)
+        ax.set_ylim(322,342)
+    
+    return fig, dataframe
+
 def plot_member_data(type):
 
     if type == 'sale_per_order':
@@ -262,4 +310,4 @@ def plot_product_data(type):
 
 
 
- 
+

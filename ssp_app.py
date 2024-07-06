@@ -16,6 +16,30 @@ def home():
     st.write("This dashboard app features the full analysis of the supermarket sales data.")
     st.write("Navigate the app using the pages menu on the left.")
 
+def store_analysis():
+    st.title("Supermarket Sales Data Analysis: Store Analysis")
+
+    #Sales:
+    st.title(":red[Sales]")
+    sales_graph, dataframe_sales = cf.plot_store_data(type='sales')
+
+    st.pyplot(fig=sales_graph,use_container_width=True)
+    st.dataframe(dataframe_sales,use_container_width=True)
+
+    #Orders:
+    st.title(":red[Orders]")
+    orders_graph, dataframe_orders = cf.plot_store_data(type='orders')
+
+    st.pyplot(fig=orders_graph,use_container_width=True)
+    st.dataframe(dataframe_orders,use_container_width=True)
+
+    #Sale per Order:
+    st.title(":red[Average Sale Per Order]")
+    aso_graph, dataframe_aso = cf.plot_store_data(type='sale_per_order')
+
+    st.pyplot(fig=aso_graph,use_container_width=True)
+    st.dataframe(dataframe_aso,use_container_width=True)
+
 def product_analysis():
     st.title("Supermarket Sales Data Analysis: Product Analysis")
 
@@ -64,7 +88,6 @@ def gender_analysis():
     st.pyplot(fig=aso_graph,use_container_width=True)
     st.dataframe(dataframe_aso,use_container_width=True)
 
-
 def member_analysis():
     st.title("Supermarket Sales Data Analysis: Member Analysis")
 
@@ -94,7 +117,7 @@ def member_analysis():
 with st.sidebar:
     selected = option_menu(
         menu_title="Menu",
-        options=["Home", "Product Analysis", "Gender Analysis", "Member Analysis"],
+        options=["Home", "Store Analysis","Product Analysis", "Gender Analysis", "Member Analysis"],
         icons=["house"],
         menu_icon="list",
         default_index=0
@@ -103,6 +126,9 @@ with st.sidebar:
 #Main:
 if selected == "Home":
     home()
+
+if selected == "Store Analysis":
+    store_analysis()
 
 if selected == "Product Analysis":
     product_analysis()
