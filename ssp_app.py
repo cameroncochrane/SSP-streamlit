@@ -19,6 +19,7 @@ def home():
 def product_analysis():
     st.title("Supermarket Sales Data Analysis: Product Analysis")
 
+    st.title(":red[Product Analysis: Sales]")
     sales_graph, dataframe = cf.plot_product_data(type='sales')
 
     st.pyplot(fig=sales_graph,use_container_width=True)
@@ -30,16 +31,12 @@ def gender_analysis():
 def member_analysis():
     st.title("Supermarket Sales Data Analysis: Member Analysis")
 
-def test_page():
-    #st.title("Test Page")
-    # Using HTML and CSS to style text
-    st.markdown("<h1>Hello, World!</h1>",unsafe_allow_html=True)
 
 #Sidebar:
 with st.sidebar:
     selected = option_menu(
         menu_title="Menu",
-        options=["Home", "Product Analysis", "Gender Analysis", "Member Analysis","Test Page"],
+        options=["Home", "Product Analysis", "Gender Analysis", "Member Analysis"],
         icons=["house"],
         menu_icon="list",
         default_index=0
@@ -58,5 +55,3 @@ if selected == "Gender Analysis":
 if selected == "Member Analysis":
     member_analysis()
 
-if selected == "Test":
-    test_page()
