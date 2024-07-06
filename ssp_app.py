@@ -19,11 +19,26 @@ def home():
 def product_analysis():
     st.title("Supermarket Sales Data Analysis: Product Analysis")
 
+    #Sales:
     st.title(":red[Product Analysis: Sales]")
-    sales_graph, dataframe = cf.plot_product_data(type='sales')
+    sales_graph, dataframe_sales = cf.plot_product_data(type='sales')
 
     st.pyplot(fig=sales_graph,use_container_width=True)
-    st.dataframe(dataframe,use_container_width=True)
+    st.dataframe(dataframe_sales,use_container_width=True)
+
+    #Orders:
+    st.title(":red[Product Analysis: Orders]")
+    orders_graph, dataframe_orders = cf.plot_product_data(type='orders')
+
+    st.pyplot(fig=orders_graph,use_container_width=True)
+    st.dataframe(dataframe_orders,use_container_width=True)
+
+    #Sale per Orders:
+    st.title(":red[Product Analysis: Average Sale Per Order]")
+    aso_graph, dataframe_aso = cf.plot_product_data(type='sale_per_order')
+
+    st.pyplot(fig=aso_graph,use_container_width=True)
+    st.dataframe(dataframe_aso,use_container_width=True)
 
 def gender_analysis():
     st.title("Supermarket Sales Data Analysis: Gender Analysis")
