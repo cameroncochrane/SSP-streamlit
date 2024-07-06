@@ -20,12 +20,12 @@ def store_analysis():
     st.title("Supermarket Sales Data Analysis: Store Analysis")
 
     #Sales:
-    st.title(":red[Sales]")
     sales_graph, dataframe_sales = cf.plot_store_data(type='sales')
 
-    st.pyplot(fig=sales_graph,use_container_width=True)
     st.dataframe(dataframe_sales,use_container_width=True)
 
+    st.title(":red[Sales]")
+    st.pyplot(fig=sales_graph,use_container_width=True)
     #Orders:
     st.title(":red[Orders]")
     orders_graph, dataframe_orders = cf.plot_store_data(type='orders')
