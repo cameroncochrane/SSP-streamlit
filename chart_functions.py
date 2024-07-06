@@ -34,7 +34,7 @@ def plot_store_data(type):
         ax.set_ylim(100000,112000)
 
     if type == 'orders':
-        dataframe = pd.read_csv('data/average_sale_member.csv')
+        dataframe = pd.read_csv('data/store.csv')
         dataframe.set_index(dataframe.columns[0], inplace=True)
 
         stores = dataframe.columns
