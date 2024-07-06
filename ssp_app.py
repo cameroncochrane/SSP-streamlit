@@ -33,7 +33,7 @@ def product_analysis():
     st.pyplot(fig=orders_graph,use_container_width=True)
     st.dataframe(dataframe_orders,use_container_width=True)
 
-    #Sale per Orders:
+    #Sale per Order:
     st.title(":red[Product Analysis: Average Sale Per Order]")
     aso_graph, dataframe_aso = cf.plot_product_data(type='sale_per_order')
 
@@ -42,6 +42,28 @@ def product_analysis():
 
 def gender_analysis():
     st.title("Supermarket Sales Data Analysis: Gender Analysis")
+
+    #Sales:
+    st.title(":red[Gender Analysis: Sales]")
+    sales_graph, dataframe_sales = cf.plot_gender_data(type='sales')
+
+    st.pyplot(fig=sales_graph,use_container_width=True)
+    st.dataframe(dataframe_sales,use_container_width=True)
+    
+    #Orders:
+    st.title(":red[Gender Analysis: Orders]")
+    orders_graph, dataframe_orders = cf.plot_gender_data(type='orders')
+
+    st.pyplot(fig=orders_graph,use_container_width=True)
+    st.dataframe(dataframe_orders,use_container_width=True)
+
+    #Sale per Order:
+    st.title(":red[Gender Analysis: Average Sale per Order]")
+    aso_graph, dataframe_aso = cf.plot_gender_data(type='sale_per_order')
+
+    st.pyplot(fig=aso_graph,use_container_width=True)
+    st.dataframe(dataframe_aso,use_container_width=True)
+
 
 def member_analysis():
     st.title("Supermarket Sales Data Analysis: Member Analysis")
