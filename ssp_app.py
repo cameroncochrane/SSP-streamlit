@@ -33,20 +33,7 @@ def member_analysis():
 def test_page():
     #st.title("Test Page")
     # Using HTML and CSS to style text
-    components.html("""
-        <style>
-        .big-font {
-            font-size:50px;
-            color: red;
-        }
-        .custom-text {
-            font-size:20px;
-            color: blue;
-        }
-        </style>
-        <p class="big-font">This is a title with custom font size and color!</p>
-        <p class="custom-text">This is a write text with custom font size and color!</p>
-        """, height=200)
+    st.markdown("<h1 style='color: red;'>Hello, World!</h1>", unsafe_allow_html=True)
 
 #Sidebar:
 with st.sidebar:
