@@ -31,12 +31,12 @@ def plot_member_data(type):
         ax.legend()
             
     if type == 'sales':
-        sales_member = pd.read_csv('data/sales_member.csv')
-        sales_member.set_index(sales_member.columns[0], inplace=True)
+        dataframe = pd.read_csv('data/sales_member.csv')
+        dataframe.set_index(dataframe.columns[0], inplace=True)
 
-        categories = sales_member.columns
-        member_data = sales_member.loc['Member'].values
-        non_member_data = sales_member.loc['Non-member'].values
+        categories = dataframe.columns
+        member_data = dataframe.loc['Member'].values
+        non_member_data = dataframe.loc['Non-member'].values
 
         # Define the positions for the bars
         bar_width = 0.35
@@ -57,12 +57,12 @@ def plot_member_data(type):
         ax.legend()
 
     if type == 'orders':
-        orders_member = pd.read_csv('data/orders_member.csv')
-        orders_member.set_index(orders_member.columns[0], inplace=True)
+        dataframe = pd.read_csv('data/orders_member.csv')
+        dataframe.set_index(dataframe.columns[0], inplace=True)
 
-        categories = orders_member.columns
-        member_data = orders_member.loc['Member'].values
-        non_member_data = orders_member.loc['Non-member'].values
+        categories = dataframe.columns
+        member_data = dataframe.loc['Member'].values
+        non_member_data = dataframe.loc['Non-member'].values
 
         # Define the positions for the bars
         bar_width = 0.35
@@ -87,12 +87,12 @@ def plot_member_data(type):
 def plot_gender_data(type):
 
     if type == 'sale_per_order':
-        average_sale_gender = pd.read_csv('data/average_sale_gender.csv')
-        average_sale_gender.set_index(average_sale_gender.columns[0], inplace=True)
+        dataframe = pd.read_csv('data/average_sale_gender.csv')
+        dataframe.set_index(dataframe.columns[0], inplace=True)
 
-        categories = average_sale_gender.columns
-        male_data = average_sale_gender.loc['Male'].values
-        female_data = average_sale_gender.loc['Female'].values
+        categories = dataframe.columns
+        male_data = dataframe.loc['Male'].values
+        female_data = dataframe.loc['Female'].values
 
         # Define the positions for the bars
         bar_width = 0.35
@@ -113,12 +113,12 @@ def plot_gender_data(type):
         ax.legend()
 
     if type == 'sales':
-        sales_gender = pd.read_csv('data/sales_gender.csv')
-        sales_gender.set_index(sales_gender.columns[0], inplace=True)
+        dataframe = pd.read_csv('data/sales_gender.csv')
+        dataframe.set_index(dataframe.columns[0], inplace=True)
 
-        categories = sales_gender.columns
-        male_data = sales_gender.loc['Male'].values
-        female_data = sales_gender.loc['Female'].values
+        categories = dataframe.columns
+        male_data = dataframe.loc['Male'].values
+        female_data = dataframe.loc['Female'].values
 
         # Define the positions for the bars
         bar_width = 0.35
@@ -139,12 +139,12 @@ def plot_gender_data(type):
         ax.legend()
 
     if type == 'orders':
-        orders_gender = pd.read_csv('data/orders_gender.csv')
-        orders_gender.set_index(orders_gender.columns[0], inplace=True)
+        dataframe = pd.read_csv('data/orders_gender.csv')
+        dataframe.set_index(dataframe.columns[0], inplace=True)
 
-        categories = orders_gender.columns
-        male_data = orders_gender.loc['Male'].values
-        female_data = orders_gender.loc['Female'].values
+        categories = dataframe.columns
+        male_data = dataframe.loc['Male'].values
+        female_data = dataframe.loc['Female'].values
 
         # Define the positions for the bars
         bar_width = 0.35
@@ -164,18 +164,18 @@ def plot_gender_data(type):
         ax.set_ylim(125,200)
         ax.legend()
 
-    return fig
+    return fig, dataframe
 
 def plot_product_data(type):
 
     if type == 'sale_per_order':
-        average_sale_per_order_product = pd.read_csv('data/average_sales_per_order_product.csv')
-        average_sale_per_order_product.set_index(average_sale_per_order_product.columns[0], inplace=True)
+        dataframe = pd.read_csv('data/average_sales_per_order_product.csv')
+        dataframe.set_index(dataframe.columns[0], inplace=True)
 
-        categories = average_sale_per_order_product.index
-        mandalay_data = average_sale_per_order_product['Mandalay'].values
-        naypyitaw_data = average_sale_per_order_product['Naypyitaw'].values
-        yangon_data = average_sale_per_order_product['Yangon'].values
+        categories = dataframe.index
+        mandalay_data = dataframe['Mandalay'].values
+        naypyitaw_data = dataframe['Naypyitaw'].values
+        yangon_data = dataframe['Yangon'].values
 
 
         # Define the positions for the bars
@@ -229,13 +229,13 @@ def plot_product_data(type):
         ax.legend()
 
     if type == 'orders':
-        orders_product = pd.read_csv('data/orders_product.csv')
-        orders_product.set_index(orders_product.columns[0], inplace=True)
+        dataframe = pd.read_csv('data/orders_product.csv')
+        dataframe.set_index(dataframe.columns[0], inplace=True)
 
-        categories = orders_product.index
-        mandalay_data = orders_product['Mandalay'].values
-        naypyitaw_data = orders_product['Naypyitaw'].values
-        yangon_data = orders_product['Yangon'].values
+        categories = dataframe.index
+        mandalay_data = dataframe['Mandalay'].values
+        naypyitaw_data = dataframe['Naypyitaw'].values
+        yangon_data = dataframe['Yangon'].values
 
 
         # Define the positions for the bars

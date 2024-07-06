@@ -28,11 +28,35 @@ def gender_analysis():
 def member_analysis():
     st.title("Supermarket Sales Data Analysis: Member Analysis")
 
+def test_page():
+    st.title("Test Page")
+    # Using HTML and CSS to style text
+    st.markdown("""
+        <style>
+        .big-font {
+            font-size:50px !important;
+            color: red;
+        }
+        </style>
+        <p class="big-font">This is a title with custom font size and color!</p>
+        """, unsafe_allow_html=True)
+
+    st.markdown("""
+        <style>
+        .custom-text {
+            font-size:20px !important;
+            color: blue;
+        }
+        </style>
+        <p class="custom-text">This is a write text with custom font size and color!</p>
+        """, unsafe_allow_html=True)
+
+
 #Sidebar:
 with st.sidebar:
     selected = option_menu(
         menu_title="Menu",
-        options=["Home", "Product Analysis", "Gender Analysis", "Member Analysis"],
+        options=["Home", "Product Analysis", "Gender Analysis", "Member Analysis","Test Page"],
         icons=["house"],
         menu_icon="list",
         default_index=0
@@ -50,3 +74,6 @@ if selected == "Gender Analysis":
 
 if selected == "Member Analysis":
     member_analysis()
+
+if selected == "Test":
+    test_page()
