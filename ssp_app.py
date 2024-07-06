@@ -33,7 +33,7 @@ def member_analysis():
 def test_page():
     #st.title("Test Page")
     # Using HTML and CSS to style text
-    st.markdown("<h1>Hello, World!</h1>")
+    st.markdown("<h1>Hello, World!</h1>",unsafe_allow_html=True)
 
 #Sidebar:
 with st.sidebar:
