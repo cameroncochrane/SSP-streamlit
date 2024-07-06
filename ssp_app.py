@@ -29,7 +29,7 @@ def member_analysis():
     st.title("Supermarket Sales Data Analysis: Member Analysis")
 
 def test_page():
-    st.title("Test Page")
+    #st.title("Test Page")
     # Using HTML and CSS to style text
     st.markdown("""
         <style>
