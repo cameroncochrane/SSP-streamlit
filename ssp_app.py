@@ -20,7 +20,6 @@ def product_analysis():
     sales_graph, dataframe = cf.plot_product_data(type='sales')
 
     st.pyplot(fig=sales_graph,use_container_width=True)
-    dataframe.columns = ['Product','Mandalay','Naypyitaw','Yangon']
     st.dataframe(dataframe,use_container_width=True)
 
 def gender_analysis():
